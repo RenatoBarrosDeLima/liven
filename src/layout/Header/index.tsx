@@ -20,6 +20,14 @@ import {
   HeaderIcons,
   Col3,
   ButtonSearch,
+  InputSearch,
+  SelectSearch,
+  HeaderSearch,
+  FormSearch,
+  Logo,
+  HeaderLogo,
+  Col6,
+  Row,
 } from "./styles";
 
 const Header = () => {
@@ -71,35 +79,35 @@ const Header = () => {
             {/* container */}
             <div className="container">
               {/* row */}
-              <div className="row">
+              <Row>
                 {/* LOGO */}
-                <div className="col-md-3">
-                  <div className="header-logo">
-                    <a href="#" className="logo">
+                <Col3>
+                  <HeaderLogo>
+                    <Logo href="#">
                       <Image
                         src={require("../../../img/logo.png")}
                         width={169}
                         height={70}
                       />
-                    </a>
-                  </div>
-                </div>
+                    </Logo>
+                  </HeaderLogo>
+                </Col3>
                 {/* /LOGO */}
 
                 {/* SEARCH BAR */}
-                <div className="col-md-6">
-                  <div className="header-search">
-                    <form>
-                      <select className="input-select">
+                <Col6>
+                  <HeaderSearch>
+                    <FormSearch>
+                      <SelectSearch>
                         <option value="0">All Categories</option>
                         <option value="1">Category 01</option>
                         <option value="1">Category 02</option>
-                      </select>
-                      <input className="input" placeholder="Search here" />
+                      </SelectSearch>
+                      <InputSearch placeholder="Search here" />
                       <ButtonSearch>Search</ButtonSearch>
-                    </form>
-                  </div>
-                </div>
+                    </FormSearch>
+                  </HeaderSearch>
+                </Col6>
                 {/* /SEARCH BAR */}
 
                 {/* ACCOUNT */}
@@ -148,7 +156,7 @@ const Header = () => {
                   </HeaderIcons>
                 </Col3>
                 {/* /ACCOUNT */}
-              </div>
+              </Row>
               {/* row */}
             </div>
             {/* container */}

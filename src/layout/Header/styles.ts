@@ -85,3 +85,64 @@ export const ButtonSearch = styled.button`
   border-radius: 0px 40px 40px 0px;
   padding: 1px 15px 0px 0px;
 `;
+
+export const InputSearch = styled.input`
+  height: 40px;
+  padding: 1px 15px 0px 0px;
+  border: 1px solid #e4e7ed;
+  background-color: #fff;
+  width: 100%;
+
+  width: calc(100% - 260px);
+  margin-right: -4px;
+`;
+
+export const SelectSearch = styled.select`
+  padding: 0px 15px;
+  background: #fff;
+  border: 1px solid #e4e7ed;
+  height: 40px;
+
+  margin-right: -4px;
+  border-radius: 40px 0px 0px 40px;
+`;
+
+export const HeaderSearch = styled.div`
+  padding: 15px 0px;
+`;
+
+export const FormSearch = styled.form`
+  position: relative;
+`;
+
+export const Logo = styled.a`
+  display: block;
+
+  @media only screen and (max-width: 991px) {
+    display: inline-block;
+  }
+`;
+
+export const HeaderLogo = styled.div`
+  @media only screen and (max-width: 991px) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const Col6 = styled.div`
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (min-width: 992px) {
+    float: left;
+    width: 50%;
+  }
+`;
+
+export const Row = styled.div`
+  margin-right: -15px;
+  margin-left: -15px;
+`;
