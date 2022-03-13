@@ -1,171 +1,166 @@
-import React from "react";
-import {
-  BsFillTelephoneFill,
-  BsFillGeoAltFill,
-  BsCurrencyDollar,
-  BsPerson,
-} from "react-icons/bs";
+import React, { useState } from "react";
+import { BsFillTelephoneFill, BsFillGeoAltFill, BsHeart } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 
+import {
+  Copyright,
+  Col12,
+  Row,
+  Content,
+  Section,
+  Links,
+  Link,
+  LinkButton,
+  FooterTitle,
+  ListFooter,
+  Col3,
+  Container,
+} from "./styles";
+
 const Footer = () => {
+  const [year] = useState(new Date().getFullYear());
   return (
     <>
       {/* FOOTER  */}
-      <footer id="footer">
+      <Container>
         {/* top footer  */}
-        <div className="section">
+        <Section bottom={false}>
           {/* container  */}
-          <div className="container">
+          <Content>
             {/* row  */}
-            <div className="row">
-              <div className="col-md-3 col-xs-6">
-                <div className="footer">
-                  <h3 className="footer-title">About Us</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut.
-                  </p>
-                  <ul className="footer-links">
-                    <li>
-                      <a href="#">
+            <Row>
+              <Col3>
+                <ListFooter>
+                  <FooterTitle>About Us</FooterTitle>
+                  <Links>
+                    <Link>
+                      <LinkButton href="#">
                         <BsFillGeoAltFill
                           className="icon-footer"
                           size={12}
                           color="#D10024"
                         />
                         1734 Stonecoal Road
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
+                      </LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">
                         <BsFillTelephoneFill
                           className="icon-footer"
                           size={12}
                           color="#D10024"
                         />
                         +021-95-51-84
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
+                      </LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">
                         <AiOutlineMail
                           className="icon-footer"
                           size={12}
                           color="#D10024"
                         />
                         email@email.com
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                      </LinkButton>
+                    </Link>
+                  </Links>
+                </ListFooter>
+              </Col3>
 
-              <div className="col-md-3 col-xs-6">
-                <div className="footer">
-                  <h3 className="footer-title">Categories</h3>
-                  <ul className="footer-links">
-                    <li>
-                      <a href="#">Hot deals</a>
-                    </li>
-                    <li>
-                      <a href="#">Laptops</a>
-                    </li>
-                    <li>
-                      <a href="#">Smartphones</a>
-                    </li>
-                    <li>
-                      <a href="#">Cameras</a>
-                    </li>
-                    <li>
-                      <a href="#">Accessories</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <Col3>
+                <ListFooter>
+                  <FooterTitle>Categories</FooterTitle>
+                  <Links>
+                    <Link>
+                      <LinkButton href="#">Hot deals</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Laptops</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Smartphones</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Cameras</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Accessories</LinkButton>
+                    </Link>
+                  </Links>
+                </ListFooter>
+              </Col3>
 
-              <div className="clearfix visible-xs"></div>
+              <Col3>
+                <ListFooter>
+                  <FooterTitle>Information</FooterTitle>
+                  <Links>
+                    <Link>
+                      <LinkButton href="#">About Us</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Contact Us</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Privacy Policy</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Orders and Returns</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Terms & Conditions</LinkButton>
+                    </Link>
+                  </Links>
+                </ListFooter>
+              </Col3>
 
-              <div className="col-md-3 col-xs-6">
-                <div className="footer">
-                  <h3 className="footer-title">Information</h3>
-                  <ul className="footer-links">
-                    <li>
-                      <a href="#">About Us</a>
-                    </li>
-                    <li>
-                      <a href="#">Contact Us</a>
-                    </li>
-                    <li>
-                      <a href="#">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="#">Orders and Returns</a>
-                    </li>
-                    <li>
-                      <a href="#">Terms & Conditions</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="col-md-3 col-xs-6">
-                <div className="footer">
-                  <h3 className="footer-title">Service</h3>
-                  <ul className="footer-links">
-                    <li>
-                      <a href="#">My Account</a>
-                    </li>
-                    <li>
-                      <a href="#">View Cart</a>
-                    </li>
-                    <li>
-                      <a href="#">Wishlist</a>
-                    </li>
-                    <li>
-                      <a href="#">Track My Order</a>
-                    </li>
-                    <li>
-                      <a href="#">Help</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+              <Col3>
+                <ListFooter>
+                  <FooterTitle>Service</FooterTitle>
+                  <Links>
+                    <Link>
+                      <LinkButton href="#">My Account</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">View Cart</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Wishlist</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Track My Order</LinkButton>
+                    </Link>
+                    <Link>
+                      <LinkButton href="#">Help</LinkButton>
+                    </Link>
+                  </Links>
+                </ListFooter>
+              </Col3>
+            </Row>
             {/* /row  */}
-          </div>
+          </Content>
           {/* /container  */}
-        </div>
+        </Section>
         {/* /top footer  */}
 
         {/* bottom footer */}
-        <div id="bottom-footer" className="section">
-          <div className="container">
+        <Section bottom={true}>
+          <Content>
             {/* row  */}
-            <div className="row">
-              <div className="col-md-12 text-center">
-                <span className="copyright">
-                  {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.  */}
+            <Row>
+              <Col12>
+                <Copyright>
                   Copyright &copy;
-                  <script>document.write(new Date().getFullYear());</script> All
-                  rights reserved | This template is made with{" "}
-                  <i className="fa fa-heart-o" aria-hidden="true"></i> by{" "}
-                  <a
-                    href="https://colorlib.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Colorlib
-                  </a>
-                  {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.  */}
-                </span>
-              </div>
-            </div>
+                  {year} All rights reserved | This template is made with{" "}
+                  <BsHeart size={12} color="#ffffff" /> by Renato
+                </Copyright>
+              </Col12>
+            </Row>
             {/* /row  */}
-          </div>
+          </Content>
           {/* /container */}
-        </div>
+        </Section>
         {/* /bottom footer  */}
-      </footer>
+      </Container>
       {/* /FOOTER  */}
     </>
   );
