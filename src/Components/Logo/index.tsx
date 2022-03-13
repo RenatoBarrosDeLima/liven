@@ -9,7 +9,7 @@ const Logo = () => {
       <Container>
         <LogoButton href="#">
           <Image
-            src={require("../../../../../img/logo.png")}
+            src={require("../../../img/logo.png")}
             width={169}
             height={70}
           />
