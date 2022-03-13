@@ -3,19 +3,21 @@ import { BsFillTelephoneFill, BsFillGeoAltFill, BsHeart } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 
 import {
-  Copyright,
   Col12,
-  Row,
-  Content,
-  Section,
-  Links,
-  Link,
-  LinkButton,
-  FooterTitle,
-  ListFooter,
   Col3,
   Container,
+  Content,
+  Copyright,
+  FooterTitle,
+  Link,
+  LinkButton,
+  ListFooter,
+  Links,
+  Row,
+  Section,
 } from "./styles";
+
+import { phone, address, email, author } from "../mockData";
 
 const Footer = () => {
   const [year] = useState(new Date().getFullYear());
@@ -40,7 +42,7 @@ const Footer = () => {
                           size={12}
                           color="#D10024"
                         />
-                        1734 Stonecoal Road
+                        {address}
                       </LinkButton>
                     </Link>
                     <Link>
@@ -50,7 +52,7 @@ const Footer = () => {
                           size={12}
                           color="#D10024"
                         />
-                        +021-95-51-84
+                        {phone}
                       </LinkButton>
                     </Link>
                     <Link>
@@ -60,7 +62,7 @@ const Footer = () => {
                           size={12}
                           color="#D10024"
                         />
-                        email@email.com
+                        {email}
                       </LinkButton>
                     </Link>
                   </Links>
@@ -151,7 +153,7 @@ const Footer = () => {
                 <Copyright>
                   Copyright &copy;
                   {year} All rights reserved | This template is made with{" "}
-                  <BsHeart size={12} color="#ffffff" /> by Renato
+                  <BsHeart size={12} color="#ffffff" /> by {author}
                 </Copyright>
               </Col12>
             </Row>

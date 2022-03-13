@@ -4,12 +4,6 @@ interface SectionProps {
   bottom: boolean;
 }
 
-export const Copyright = styled.span`
-  margin-top: 30px;
-  display: block;
-  font-size: 12px;
-`;
-
 export const Col12 = styled.div`
   text-align: center;
 
@@ -24,9 +18,21 @@ export const Col12 = styled.div`
   }
 `;
 
-export const Row = styled.div`
-  margin-right: -15px;
-  margin-left: -15px;
+export const Col3 = styled.div`
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (min-width: 992px) {
+    float: left;
+    width: 25%;
+  }
+`;
+
+export const Container = styled.footer`
+  background: #15161d;
+  color: #b9babc;
 `;
 
 export const Content = styled.div`
@@ -49,17 +55,17 @@ export const Content = styled.div`
   }
 `;
 
-export const Section = styled.div<SectionProps>`
-  background: ${($props) => ($props.bottom ? "#1e1f29" : "")};
+export const Copyright = styled.span`
+  margin-top: 30px;
   display: block;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  font-size: 12px;
 `;
 
-export const Links = styled.ul`
-  list-style: none;
-  padding: 0;
-  line-height: 2;
+export const FooterTitle = styled.h3`
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0px 0px 30px;
 `;
 
 export const Link = styled.li``;
@@ -74,30 +80,24 @@ export const LinkButton = styled.a`
   }
 `;
 
-export const FooterTitle = styled.h3`
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 18px;
-  margin: 0px 0px 30px;
-`;
-
 export const ListFooter = styled.div`
   margin: 30px 0px;
 `;
 
-export const Col3 = styled.div`
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-
-  @media (min-width: 992px) {
-    float: left;
-    width: 25%;
-  }
+export const Links = styled.ul`
+  list-style: none;
+  padding: 0;
+  line-height: 2;
 `;
 
-export const Container = styled.footer`
-  background: #15161d;
-  color: #b9babc;
+export const Row = styled.div`
+  margin-right: -15px;
+  margin-left: -15px;
+`;
+
+export const Section = styled.div<SectionProps>`
+  background: ${($props) => ($props.bottom ? "#1e1f29" : "")};
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
 `;

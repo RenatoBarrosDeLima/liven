@@ -14,12 +14,14 @@ import {
   Row,
 } from "./styles";
 
+import { phone, address, email } from "../mockData";
+
 const Header = () => {
   return (
     <>
       <Container>
         {/* TOP HEADER */}
-        <TopHeader />
+        <TopHeader phone={phone} address={address} email={email} />
         {/* /TOP HEADER */}
 
         {/* MAIN HEADER */}

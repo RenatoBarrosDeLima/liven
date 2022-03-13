@@ -17,7 +17,13 @@ import {
   Row,
 } from "./styles";
 
-const TopHeader = () => {
+interface TopHeaderProps {
+  phone: string;
+  address: string;
+  email: string;
+}
+
+const TopHeader: React.FC<TopHeaderProps> = ({ phone, address, email }) => {
   return (
     <>
       <Container>
@@ -26,26 +32,24 @@ const TopHeader = () => {
             <LeftUL>
               <Li>
                 <ButtonHeader href="#">
-                  <BsFillTelephoneFill size={12} color="#D10024" />{" "}
-                  +021-95-51-84
+                  <BsFillTelephoneFill size={12} color="#D10024" /> {phone}
                 </ButtonHeader>
               </Li>
               <Li>
                 <ButtonHeader href="#">
-                  <AiOutlineMail size={12} color="#D10024" /> email@email.com
+                  <AiOutlineMail size={12} color="#D10024" /> {email}
                 </ButtonHeader>
               </Li>
               <Li>
                 <ButtonHeader href="#">
-                  <BsFillGeoAltFill size={12} color="#D10024" /> 1734 Stonecoal
-                  Road
+                  <BsFillGeoAltFill size={12} color="#D10024" /> {address}
                 </ButtonHeader>
               </Li>
             </LeftUL>
             <RightUL>
               <Li>
                 <ButtonHeader href="#">
-                  <BsCurrencyDollar size={12} color="#D10024" /> USD
+                  <BsCurrencyDollar size={12} color="#D10024" /> R$
                 </ButtonHeader>
               </Li>
               <Li>
