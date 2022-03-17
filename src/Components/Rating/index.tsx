@@ -10,7 +10,6 @@ interface RatingProps {
 }
 
 const Rating: React.FC<RatingProps> = ({ rating }) => {
-  console.log(rating);
   const starFill = (star: number) => {
     if (star <= rating.rate) {
       return <BsStarFill size={15} color="#806d03" />;

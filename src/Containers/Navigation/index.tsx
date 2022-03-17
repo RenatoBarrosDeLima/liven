@@ -9,20 +9,22 @@ import {
   Navs,
 } from "./styles";
 
-import { menus } from "./mockData";
+interface NavitaionProps {
+  menus: any;
+}
 
-const Navigation = () => {
+const Navigation: React.FC<NavitaionProps> = ({ menus }) => {
   const [active, setActive] = useState(0);
   return (
     <Container>
       <Content>
         <NavResponsive>
           <Navs>
-            {menus?.map((menu, index) => {
+            {menus?.map((menu: string, index: number) => {
               return (
                 <Nav key={index} active={active === index ? true : false}>
                   <NavLink onClick={() => setActive(index)} href="#">
-                    {menu.name}
+                    {menu}
                   </NavLink>
                 </Nav>
               );

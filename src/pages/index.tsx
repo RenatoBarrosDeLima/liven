@@ -1,17 +1,18 @@
 import Home from "../Containers/Home";
 import api from "../services/api";
 
-const Page = ({ products }: any) => {
-  return <Home products={products} />;
+const Page = ({ products, menus }: any) => {
+  return <Home products={products} menus={menus} />;
 };
 
 export const getServerSideProps = async () => {
   try {
     const { data: products } = await api.get("products");
+    const { data: menus } = await api.get("products/categories");
 
-    return { props: { products } };
+    return { props: { products, menus } };
   } catch (e) {
-    return { props: { products: [] } };
+    return { props: { products: [], menus: [] } };
   }
 };
 

@@ -1,11 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {
-  AiFillStar,
-  AiOutlineStar,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
-import { BsFillCartPlusFill, BsFillCartDashFill } from "react-icons/bs";
+import { BsFillCartPlusFill } from "react-icons/bs";
 
 import { moneyFormat } from "../../helpers/functions";
 
