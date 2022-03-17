@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const Rating = styled.div``;
-
 export const Price = styled.p`
   font-size: 14px;
 `;
