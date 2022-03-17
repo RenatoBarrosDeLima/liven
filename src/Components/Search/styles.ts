@@ -26,14 +26,5 @@ export const InputSearch = styled.input`
   background-color: #fff;
   width: calc(100% - 260px);
   margin-right: -4px;
-`;
-
-export const Select = styled.select`
-  padding: 0px 15px;
-  background: #fff;
-  border: 1px solid #e4e7ed;
-  height: 40px;
-
-  margin-right: -4px;
   border-radius: 40px 0px 0px 40px;
 `;

@@ -4,7 +4,7 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 
 import { moneyFormat } from "../../helpers/functions";
 
-import Rating from "../../Components/Rating";
+import Rating from "../../components/Rating";
 import { Price, Title, Col4, Row, SmallContainer, ButtonAdd } from "./styles";
 
 interface ProductProps {
@@ -22,7 +22,7 @@ const Product: React.FC<ProductProps> = ({ products }) => {
             <Col4 key={product?.id}>
               <Image width={263} height={263} src={`${product?.image}`} />
               <ButtonAdd>
-                <a href="#">
+                <a>
                   <BsFillCartPlusFill
                     className="icon-cart"
                     size={16}

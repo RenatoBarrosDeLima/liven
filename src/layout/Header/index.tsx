@@ -1,9 +1,9 @@
 import React from "react";
 
-import TopHeader from "../../Components/TopHeader";
-import Search from "../../Components/Search";
-import Icons from "../../Components/Icons";
-import Logo from "../../Components/Logo";
+import TopHeader from "../../components/TopHeader";
+import Search from "../../components/Search";
+import Icons from "../../components/Icons";
+import Logo from "../../components/Logo";
 
 import {
   Col3,
