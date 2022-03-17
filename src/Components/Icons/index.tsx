@@ -1,6 +1,6 @@
 import React from "react";
 import { BsHeart, BsFillCartFill } from "react-icons/bs";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiTwotoneBulb } from "react-icons/ai";
 
 import {
   ButtonInfo,
