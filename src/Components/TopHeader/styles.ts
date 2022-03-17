@@ -4,17 +4,26 @@ export const ButtonHeader = styled.a`
   color: #fff;
 `;
 
-export const Container = styled.body`
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  color: #333;
-`;
-
-export const Content = styled.div`
+export const Container = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #1e1f29;
   display: flex;
+`;
+
+export const Content = styled.div`
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+
+  @media (min-width: 992px) {
+    width: 970px;
+  }
 `;
 
 export const LeftUL = styled.ul`
@@ -53,7 +62,6 @@ export const Row = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  display: flow-root;
 
   @media (min-width: 768px) {
     width: 750px;

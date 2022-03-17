@@ -28,37 +28,35 @@ const TopHeader: React.FC<TopHeaderProps> = ({ phone, address, email }) => {
     <>
       <Container>
         <Content>
-          <Row>
-            <LeftUL>
-              <Li>
-                <ButtonHeader href="#">
-                  <BsFillTelephoneFill size={12} color="#D10024" /> {phone}
-                </ButtonHeader>
-              </Li>
-              <Li>
-                <ButtonHeader href="#">
-                  <AiOutlineMail size={12} color="#D10024" /> {email}
-                </ButtonHeader>
-              </Li>
-              <Li>
-                <ButtonHeader href="#">
-                  <BsFillGeoAltFill size={12} color="#D10024" /> {address}
-                </ButtonHeader>
-              </Li>
-            </LeftUL>
-            <RightUL>
-              <Li>
-                <ButtonHeader href="#">
-                  <BsCurrencyDollar size={12} color="#D10024" /> R$
-                </ButtonHeader>
-              </Li>
-              <Li>
-                <ButtonHeader href="#">
-                  <BsPerson size={12} color="#D10024" /> My Account
-                </ButtonHeader>
-              </Li>
-            </RightUL>
-          </Row>
+          <LeftUL>
+            <Li>
+              <ButtonHeader href="#">
+                <BsFillTelephoneFill size={12} color="#D10024" /> {phone}
+              </ButtonHeader>
+            </Li>
+            <Li>
+              <ButtonHeader href="#">
+                <AiOutlineMail size={12} color="#D10024" /> {email}
+              </ButtonHeader>
+            </Li>
+            <Li>
+              <ButtonHeader href="#">
+                <BsFillGeoAltFill size={12} color="#D10024" /> {address}
+              </ButtonHeader>
+            </Li>
+          </LeftUL>
+          <RightUL>
+            <Li>
+              <ButtonHeader href="#">
+                <BsCurrencyDollar size={12} color="#D10024" /> R$
+              </ButtonHeader>
+            </Li>
+            <Li>
+              <ButtonHeader href="#">
+                <BsPerson size={12} color="#D10024" /> My Account
+              </ButtonHeader>
+            </Li>
+          </RightUL>
         </Content>
       </Container>
     </>

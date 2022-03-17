@@ -24,10 +24,13 @@ export const Col6 = styled.div`
   }
 `;
 
-export const Container = styled.body`
+export const Container = styled.header`
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: #333;
+
+  display: block;
+  box-sizing: border-box;
 `;
 
 export const HeaderContainer = styled.div`

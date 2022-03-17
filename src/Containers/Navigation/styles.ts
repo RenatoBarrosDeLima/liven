@@ -24,10 +24,8 @@ export const Navs = styled.ul`
 `;
 
 export const Nav = styled.li<NavProps>`
-  margin: 10.5px -15px;
-
   position: relative;
-  display: block;
+  display: flex;
 
   @media (min-width: 768px) {
     float: left;
@@ -109,4 +107,5 @@ export const Container = styled.nav`
   background: #fff;
   border-bottom: 2px solid #e4e7ed;
   border-top: 3px solid #d10024;
+  display: flex;
 `;
