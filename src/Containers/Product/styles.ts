@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Price = styled.p`
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
 `;
 
 export const Title = styled.h4`
   color: #555;
-  font-weight: normal;
+  font-weight: bold;
 `;
 
 export const Col4 = styled.div`

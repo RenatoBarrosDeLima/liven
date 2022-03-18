@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { BsHeart, BsFillCartFill } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -14,23 +14,27 @@ import {
 
 import UserContext from "../../hooks/useCart";
 
+import Dropdown from "../Dropdown";
+
 const Icons = () => {
   const { counter } = useContext(UserContext);
+  const [isDropdown, setIsDropdown] = useState(false);
 
   return (
     <>
+      <Dropdown active={isDropdown} />
       <Container>
         <Favorite>
           <ButtonInfo>
-            <BsHeart size={18} color="#ffffff" className="icon-favorite" />
+            <BsHeart size={23} color="#ffffff" className="icon-favorite" />
             <Span>Your Wishlist</Span>
             <Info>2</Info>
           </ButtonInfo>
         </Favorite>
 
-        <Cart>
+        <Cart onClick={() => setIsDropdown(!isDropdown)}>
           <ButtonInfo>
-            <BsFillCartFill size={18} color="#ffffff" className="icon-cart" />
+            <BsFillCartFill size={23} color="#ffffff" className="icon-cart" />
             <Span>Your Cart</Span>
             <Info>{counter}</Info>
           </ButtonInfo>
@@ -38,7 +42,7 @@ const Icons = () => {
 
         <Menu>
           <ButtonInfo>
-            <AiOutlineMenu size={18} color="#ffffff" className="icon-menu" />
+            <AiOutlineMenu size={23} color="#ffffff" className="icon-menu" />
             <Span>Menu</Span>
           </ButtonInfo>
         </Menu>

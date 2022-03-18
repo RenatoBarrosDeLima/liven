@@ -11,6 +11,7 @@ export const ButtonInfo = styled.a`
 
 export const Cart = styled.div`
   display: inline-block;
+  cursor: pointer;
 
   .icon-cart {
     display: block;
@@ -60,5 +61,5 @@ export const Menu = styled.div`
 `;
 
 export const Span = styled.span`
-  font-size: 12px;
+  font-size: 13px;
 `;
