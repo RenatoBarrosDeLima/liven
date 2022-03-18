@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsHeart, BsFillCartFill } from "react-icons/bs";
-import { AiOutlineMenu, AiTwotoneBulb } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
 
 import {
   ButtonInfo,
@@ -12,7 +12,11 @@ import {
   Span,
 } from "./styles";
 
+import UserContext from "../../hooks/useCart";
+
 const Icons = () => {
+  const { counter } = useContext(UserContext);
+
   return (
     <>
       <Container>
@@ -28,7 +32,7 @@ const Icons = () => {
           <ButtonInfo>
             <BsFillCartFill size={18} color="#ffffff" className="icon-cart" />
             <Span>Your Cart</Span>
-            <Info>3</Info>
+            <Info>{counter}</Info>
           </ButtonInfo>
         </Cart>
 
