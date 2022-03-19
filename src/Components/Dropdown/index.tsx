@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Image from "next/image";
-import { BsFillBagCheckFill, BsTrashFill } from "react-icons/bs";
+import { BsFillBagCheckFill, BsTrashFill, BsPlusCircle } from "react-icons/bs";
+import { CgRemove } from "react-icons/cg";
 
 import {
   Button,
@@ -30,7 +31,7 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
-  const { carts, totalPrice, removeCart, removeItemCart } =
+  const { carts, totalPrice, removeCart, removeItemCart, addQuantityItemCart } =
     useContext(UserContext);
 
   const handleCheckout = () => {
@@ -41,6 +42,10 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
     removeCart();
     setIsDropdown(!active);
   };
+
+  useEffect(() => {
+    console.log(carts);
+  }, [carts]);
 
   return (
     <>
@@ -68,13 +73,20 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
                   <CartItem>
                     <ItemName>{cart.title}</ItemName>
                     <ItemPrice>{moneyFormat(cart.price)}</ItemPrice>
-                    <ItemQuantity>Quantity: 01</ItemQuantity>
+                    <ItemQuantity>Quantity: {cart.quantity}</ItemQuantity>
                   </CartItem>
                   <DeleteItemCart>
-                    <BsTrashFill
+                    <BsPlusCircle
+                      onClick={() => addQuantityItemCart(cart.id)}
+                      size={25}
+                      color="#000000"
+                      className="icon-delete"
+                    />
+
+                    <CgRemove
                       onClick={() => removeItemCart(cart.id)}
-                      size={16}
-                      color="#1a0b0c"
+                      size={25}
+                      color="#000000"
                       className="icon-delete"
                     />
                   </DeleteItemCart>

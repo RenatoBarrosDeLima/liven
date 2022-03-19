@@ -47,7 +47,9 @@ const Product: React.FC<ProductProps> = ({ products }) => {
               ) : (
                 <Col4 key={product?.id}>
                   <Image width={263} height={263} src={`${product?.image}`} />
-                  <ButtonAdd onClick={() => addCart({ ...product })}>
+                  <ButtonAdd
+                    onClick={() => addCart({ ...product, quantity: 1 })}
+                  >
                     <a>
                       <BsFillCartPlusFill
                         className="icon-cart"

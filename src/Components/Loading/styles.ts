@@ -38,7 +38,7 @@ export const Container = styled.div`
   div {
     width: 25px;
     height: 25px;
-    background-color: orchid;
+    background-color: #d10024;
     margin-left: 5px;
     border-radius: 50%;
     margin-top: calc(50px - 12.5px);

@@ -139,8 +139,7 @@ export const DeleteCart = styled.a`
 
 export const DeleteItemCart = styled.div`
   float: right;
-  width: 10%;
-  display: flex;
+  display: grid;
   align-items: center;
   cursor: pointer;
 `;
