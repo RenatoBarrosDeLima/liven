@@ -7,8 +7,8 @@ const Search = () => {
     <>
       <Container>
         <Form>
-          <InputSearch placeholder="Search here" />
-          <ButtonSearch>Search</ButtonSearch>
+          <InputSearch placeholder="Faça sua pesquisa aqui" />
+          <ButtonSearch>Buscar</ButtonSearch>
         </Form>
       </Container>
     </>

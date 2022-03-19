@@ -27,7 +27,7 @@ const Icons = () => {
         <Favorite>
           <ButtonInfo>
             <BsHeart size={23} color="#ffffff" className="icon-favorite" />
-            <Span>Your Wishlist</Span>
+            <Span>Seus favoritos</Span>
             <Info>0</Info>
           </ButtonInfo>
         </Favorite>
@@ -35,7 +35,7 @@ const Icons = () => {
         <Cart onClick={() => setIsDropdown(!isDropdown)}>
           <ButtonInfo>
             <BsFillCartFill size={23} color="#ffffff" className="icon-cart" />
-            <Span>Your Cart</Span>
+            <Span>Seu carrinho</Span>
             <Info>{counter}</Info>
           </ButtonInfo>
         </Cart>

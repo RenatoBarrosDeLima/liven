@@ -53,7 +53,7 @@ const TopHeader: React.FC<TopHeaderProps> = ({ phone, address, email }) => {
             </Li>
             <Li>
               <ButtonHeader href="#">
-                <BsPerson size={12} color="#D10024" /> My Account
+                <BsPerson size={12} color="#D10024" /> Minha conta
               </ButtonHeader>
             </Li>
           </RightUL>
