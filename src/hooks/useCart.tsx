@@ -39,6 +39,7 @@ const CartContextProvider: React.FC = ({ children }) => {
     (data: CartType) => {
       const list = carts;
       list.push(data);
+
       setCarts(list);
       setCounter(list.length);
       setTotalPrice(sum(list));
@@ -56,7 +57,9 @@ const CartContextProvider: React.FC = ({ children }) => {
     (item: number) => {
       const list = carts;
       const cartIndex = list.findIndex((x) => x.id === item);
+
       if (cartIndex >= 0) list.splice(cartIndex, 1);
+
       setCarts(list);
       setCounter(list.length);
       setTotalPrice(sum(list));

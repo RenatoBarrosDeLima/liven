@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 import {
   Container,
@@ -11,10 +12,30 @@ import {
 
 interface NavitaionProps {
   menus: any;
+  setListProducts: (list: any) => void;
 }
 
-const Navigation: React.FC<NavitaionProps> = ({ menus }) => {
+const Navigation: React.FC<NavitaionProps> = ({ menus, setListProducts }) => {
   const [active, setActive] = useState(0);
+
+  const handleMenu = async (item: string, index: number) => {
+    setActive(index);
+
+    try {
+      await axios
+        .get(`/api/category`, {
+          params: {
+            categoryName: item,
+          },
+        })
+        .then((res) => {
+          setListProducts(res.data);
+        });
+    } catch (e) {
+    } finally {
+    }
+  };
+
   return (
     <Container>
       <Content>
@@ -23,7 +44,7 @@ const Navigation: React.FC<NavitaionProps> = ({ menus }) => {
             {menus?.map((menu: string, index: number) => {
               return (
                 <Nav key={index} active={active === index ? true : false}>
-                  <NavLink onClick={() => setActive(index)} href="#">
+                  <NavLink onClick={() => handleMenu(menu, index)} href="#">
                     {menu}
                   </NavLink>
                 </Nav>

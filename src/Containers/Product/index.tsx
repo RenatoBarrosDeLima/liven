@@ -5,7 +5,7 @@ import { BsFillCartPlusFill, BsFillCartDashFill } from "react-icons/bs";
 import { moneyFormat } from "../../helpers/functions";
 
 import Rating from "../../components/Rating";
-import { Price, Title, Col4, Row, SmallContainer, ButtonAdd } from "./styles";
+import { Price, Title, Col4, Row, Container, ButtonAdd } from "./styles";
 
 import UserContext from "../../hooks/useCart";
 
@@ -22,7 +22,7 @@ const Product: React.FC<ProductProps> = ({ products }) => {
   };
 
   return (
-    <SmallContainer>
+    <Container>
       <Row>
         {products.map((product: any) => {
           return (
@@ -66,7 +66,7 @@ const Product: React.FC<ProductProps> = ({ products }) => {
           );
         })}
       </Row>
-    </SmallContainer>
+    </Container>
   );
 };
 

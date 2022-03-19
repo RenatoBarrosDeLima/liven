@@ -51,7 +51,7 @@ export const Row = styled.div`
   }
 `;
 
-export const SmallContainer = styled.div`
+export const Container = styled.div`
   max-width: 1080px;
   margin: auto;
   padding-left: 25px;
