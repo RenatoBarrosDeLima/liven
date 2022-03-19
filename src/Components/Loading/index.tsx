@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 
 import { Container, LoadThree, LoadTwo, LoadOne } from "./styles";
 
-import UserContext from "../../hooks/useLoading";
+import LoadingContext from "../../hooks/useLoading";
 
 const Loading = () => {
-  const { loading } = useContext(UserContext);
+  const { loading } = useContext(LoadingContext);
 
   if (!loading) return <></>;
 

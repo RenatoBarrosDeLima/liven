@@ -6,6 +6,7 @@ import "../../styles/globals.css";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import Loading from "../components/Loading";
+import Toast from "../components/Toast";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Header />
       <Component {...pageProps} />
       <Loading />
+      <Toast />
       <Footer />
     </Provider>
   );

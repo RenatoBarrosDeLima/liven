@@ -1,7 +1,8 @@
-import React, { createContext, useState, useCallback } from "react";
+import React, { createContext, useState, useCallback, useContext } from "react";
 import axios from "axios";
 
 import { sum } from "../helpers/functions";
+import ToastContext from "./useToast";
 
 type CartType = {
   id: number;
@@ -37,6 +38,7 @@ const DEFAULT_VALUE = {
 const CartContext = createContext<PropsCartContext>(DEFAULT_VALUE);
 
 const CartContextProvider: React.FC = ({ children }) => {
+  const { openToast } = useContext(ToastContext);
   const [carts, setCarts] = useState<CartType[]>([]);
   const [counter, setCounter] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -56,15 +58,15 @@ const CartContextProvider: React.FC = ({ children }) => {
         .post("/api/cart", { ...body })
         .then(({ status, data }) => {
           if (status === 200) {
-            window.alert("Carrinho adicionado com sucesso");
+            openToast("Carrinho adicionado com sucesso");
           } else {
-            window.alert(
+            openToast(
               "Tivemos um problema ao salvar o carrinho, tente novamente"
             );
           }
         })
         .catch(() => {
-          window.alert(
+          openToast(
             "Tivemos um problema ao salvar o carrinho, tente novamente"
           );
         });
@@ -97,15 +99,15 @@ const CartContextProvider: React.FC = ({ children }) => {
         })
         .then(({ status, data }) => {
           if (status === 200) {
-            window.alert("Carrinho deletado com sucesso");
+            openToast("Carrinho deletado com sucesso");
           } else {
-            window.alert(
+            openToast(
               "Tivemos um problema ao deletar o carrinho, tente novamente"
             );
           }
         })
         .catch(() => {
-          window.alert(
+          openToast(
             "Tivemos um problema ao deletar o carrinho, tente novamente"
           );
         });
@@ -136,15 +138,15 @@ const CartContextProvider: React.FC = ({ children }) => {
         .put("/api/cart", { ...body })
         .then(({ status, data }) => {
           if (status === 200) {
-            window.alert("Carrinho atualizado com sucesso");
+            openToast("Carrinho atualizado com sucesso");
           } else {
-            window.alert(
+            openToast(
               "Tivemos um problema ao atualizar o carrinho, tente novamente"
             );
           }
         })
         .catch(() => {
-          window.alert(
+          openToast(
             "Tivemos um problema ao atualizar o carrinho, tente novamente"
           );
         });
@@ -176,15 +178,15 @@ const CartContextProvider: React.FC = ({ children }) => {
         .put("/api/cart", { ...body })
         .then(({ status, data }) => {
           if (status === 200) {
-            window.alert("Carrinho atualizado com sucesso");
+            openToast("Carrinho atualizado com sucesso");
           } else {
-            window.alert(
+            openToast(
               "Tivemos um problema ao atualizar o carrinho, tente novamente"
             );
           }
         })
         .catch(() => {
-          window.alert(
+          openToast(
             "Tivemos um problema ao atualizar o carrinho, tente novamente"
           );
         });

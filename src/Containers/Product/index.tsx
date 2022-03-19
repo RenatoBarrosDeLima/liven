@@ -7,14 +7,14 @@ import { moneyFormat } from "../../helpers/functions";
 import Rating from "../../components/Rating";
 import { Price, Title, Col4, Row, Container, ButtonAdd } from "./styles";
 
-import UserContext from "../../hooks/useCart";
+import CartContext from "../../hooks/useCart";
 
 interface ProductProps {
   products: any;
 }
 
 const Product: React.FC<ProductProps> = ({ products }) => {
-  const { addCart, removeItemCart, carts } = useContext(UserContext);
+  const { addCart, removeItemCart, carts } = useContext(CartContext);
 
   const isCart = (item: number) => {
     if (carts.findIndex((x) => x.id === item) >= 0) return true;

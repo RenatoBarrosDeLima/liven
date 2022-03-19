@@ -23,7 +23,7 @@ import {
   ItemQuantityValue,
 } from "./styles";
 
-import UserContext from "../../hooks/useCart";
+import CartContext from "../../hooks/useCart";
 import { moneyFormat } from "../../helpers/functions";
 
 interface DropdownProps {
@@ -38,7 +38,7 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
     removeCart,
     addQuantityItemCart,
     removeQuantityItemCart,
-  } = useContext(UserContext);
+  } = useContext(CartContext);
 
   const handleCheckout = () => {
     setIsDropdown(!active);

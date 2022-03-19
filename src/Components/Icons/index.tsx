@@ -12,12 +12,12 @@ import {
   Span,
 } from "./styles";
 
-import UserContext from "../../hooks/useCart";
+import CartContext from "../../hooks/useCart";
 
 import Dropdown from "../Dropdown";
 
 const Icons = () => {
-  const { counter } = useContext(UserContext);
+  const { counter } = useContext(CartContext);
   const [isDropdown, setIsDropdown] = useState(false);
 
   return (

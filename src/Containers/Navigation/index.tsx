@@ -10,7 +10,8 @@ import {
   Navs,
 } from "./styles";
 
-import UserContext from "../../hooks/useLoading";
+import LoadingContext from "../../hooks/useLoading";
+import ToastContext from "../../hooks/useToast";
 
 interface NavitaionProps {
   menus: any;
@@ -18,7 +19,8 @@ interface NavitaionProps {
 }
 
 const Navigation: React.FC<NavitaionProps> = ({ menus, setListProducts }) => {
-  const { openLoading, closeLoading } = useContext(UserContext);
+  const { openLoading, closeLoading } = useContext(LoadingContext);
+  const { openToast } = useContext(ToastContext);
   const [active, setActive] = useState(0);
 
   const handleMenu = async (item: string, index: number) => {
@@ -36,7 +38,7 @@ const Navigation: React.FC<NavitaionProps> = ({ menus, setListProducts }) => {
           setListProducts(res.data);
         });
     } catch (e) {
-      window.alert("Tivermos um erro ao consultar os produtos");
+      openToast("Tivermos um erro ao consultar os produtos");
     } finally {
       closeLoading();
     }
