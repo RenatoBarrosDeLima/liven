@@ -28,7 +28,7 @@ const Icons = () => {
           <ButtonInfo>
             <BsHeart size={23} color="#ffffff" className="icon-favorite" />
             <Span>Your Wishlist</Span>
-            <Info>2</Info>
+            <Info>0</Info>
           </ButtonInfo>
         </Favorite>
 

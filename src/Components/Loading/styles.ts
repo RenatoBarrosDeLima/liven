@@ -12,7 +12,18 @@ export const LoadOne = styled.div`
   animation-delay: 0.1s;
 `;
 
-export const Load = styled.div`
+export const Container = styled.div`
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.7);
+
   @keyframes loading {
     to {
       opacity: 0.3;
@@ -24,23 +35,12 @@ export const Load = styled.div`
     }
   }
 
-  width: 100%;
-  height: 100vh;
-  background-color: #383737;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   div {
     width: 25px;
     height: 25px;
     background-color: orchid;
     margin-left: 5px;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     margin-top: calc(50px - 12.5px);
     animation-name: loading;
     animation-duration: 1.2s;

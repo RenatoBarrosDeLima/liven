@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import { LoadThree, LoadTwo, LoadOne, Container } from "./styles";
+import { Container, LoadThree, LoadTwo, LoadOne } from "./styles";
+
+import UserContext from "../../hooks/useLoading";
 
 const Loading = () => {
+  const { loading } = useContext(UserContext);
+
+  if (!loading) return <></>;
+
   return (
     <>
       <Container>
