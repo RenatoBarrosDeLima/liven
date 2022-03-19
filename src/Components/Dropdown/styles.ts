@@ -46,12 +46,18 @@ export const ItemName = styled.span`
 `;
 
 export const ItemPrice = styled.span`
-  color: #6394f8;
+  color: #171011;
   margin-right: 8px;
+  font-weight: bold;
 `;
 
 export const ItemQuantity = styled.span`
-  color: #abb0be;
+  color: #3d3939;
+`;
+
+export const ItemQuantityValue = styled.span`
+  color: #0f0f0f;
+  font-weight: bold;
 `;
 
 export const Item = styled.li`

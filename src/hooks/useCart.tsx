@@ -19,6 +19,7 @@ type PropsCartContext = {
   removeCart: () => void;
   removeItemCart: (item: number) => void;
   addQuantityItemCart: (item: number) => void;
+  removeQuantityItemCart: (item: number) => void;
 };
 
 const DEFAULT_VALUE = {
@@ -29,6 +30,7 @@ const DEFAULT_VALUE = {
   removeCart: () => null,
   removeItemCart: () => null,
   addQuantityItemCart: () => null,
+  removeQuantityItemCart: () => null,
 };
 
 const CartContext = createContext<PropsCartContext>(DEFAULT_VALUE);
@@ -81,6 +83,20 @@ const CartContextProvider: React.FC = ({ children }) => {
     [carts]
   );
 
+  const removeQuantityItemCart = useCallback(
+    (item: number) => {
+      const list = carts;
+      const cartIndex = list.findIndex((x) => x.id === item);
+      list[cartIndex].quantity--;
+      if (list[cartIndex].quantity === 0) {
+        list.splice(cartIndex, 1);
+      }
+      setCarts(list);
+      setTotalPrice(sum(list));
+    },
+    [carts]
+  );
+
   return (
     <CartContext.Provider
       value={{
@@ -91,6 +107,7 @@ const CartContextProvider: React.FC = ({ children }) => {
         removeCart,
         removeItemCart,
         addQuantityItemCart,
+        removeQuantityItemCart,
       }}
     >
       {children}

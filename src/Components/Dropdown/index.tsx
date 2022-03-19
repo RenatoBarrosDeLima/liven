@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import { BsFillBagCheckFill, BsTrashFill, BsPlusCircle } from "react-icons/bs";
 import { CgRemove } from "react-icons/cg";
@@ -20,6 +20,7 @@ import {
   ShoppingCartTotal,
   DeleteItemCart,
   CartItem,
+  ItemQuantityValue,
 } from "./styles";
 
 import UserContext from "../../hooks/useCart";
@@ -31,8 +32,13 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
-  const { carts, totalPrice, removeCart, removeItemCart, addQuantityItemCart } =
-    useContext(UserContext);
+  const {
+    carts,
+    totalPrice,
+    removeCart,
+    addQuantityItemCart,
+    removeQuantityItemCart,
+  } = useContext(UserContext);
 
   const handleCheckout = () => {
     setIsDropdown(!active);
@@ -42,10 +48,6 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
     removeCart();
     setIsDropdown(!active);
   };
-
-  useEffect(() => {
-    console.log(carts);
-  }, [carts]);
 
   return (
     <>
@@ -73,7 +75,10 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
                   <CartItem>
                     <ItemName>{cart.title}</ItemName>
                     <ItemPrice>{moneyFormat(cart.price)}</ItemPrice>
-                    <ItemQuantity>Quantity: {cart.quantity}</ItemQuantity>
+                    <ItemQuantity>
+                      Quantidade:
+                      <ItemQuantityValue> {cart.quantity} </ItemQuantityValue>
+                    </ItemQuantity>
                   </CartItem>
                   <DeleteItemCart>
                     <BsPlusCircle
@@ -84,7 +89,7 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
                     />
 
                     <CgRemove
-                      onClick={() => removeItemCart(cart.id)}
+                      onClick={() => removeQuantityItemCart(cart.id)}
                       size={25}
                       color="#000000"
                       className="icon-delete"
