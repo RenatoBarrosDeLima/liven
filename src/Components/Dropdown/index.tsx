@@ -1,56 +1,74 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
-import { BsFillCartCheckFill } from "react-icons/bs";
+import { BsFillBagCheckFill, BsTrashFill } from "react-icons/bs";
 
 import {
-  ItemQuantity,
-  ItemPrice,
-  ItemName,
-  Li,
-  ImageContainer,
-  MainColorText,
-  LighterText,
-  Ul,
   Button,
-  ShoppingCartTotal,
-  ShoppingCartHeader,
-  ShoppingCart,
   Container,
+  DeleteCart,
+  ImageContainer,
+  ItemName,
+  ItemPrice,
+  ItemQuantity,
+  Item,
+  Items,
+  TotalLabel,
+  TotalPrice,
+  ShoppingCart,
+  ShoppingCartHeader,
+  ShoppingCartTotal,
 } from "./styles";
+
+import UserContext from "../../hooks/useCart";
+import { moneyFormat } from "../../helpers/functions";
 
 interface DropdownProps {
   active: boolean;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ active }) => {
+  const { carts, totalPrice } = useContext(UserContext);
   return (
     <>
       <Container active={active}>
         <ShoppingCart>
           <ShoppingCartHeader>
             <ShoppingCartTotal>
-              <LighterText>Total:</LighterText>
-              <MainColorText>$2,229.97</MainColorText>
+              <TotalLabel>Total:</TotalLabel>
+              <TotalPrice>{moneyFormat(totalPrice)}</TotalPrice>
             </ShoppingCartTotal>
           </ShoppingCartHeader>
 
-          <Ul>
-            <Li>
-              <ImageContainer>
-                <Image
-                  src={require("../../../img/product01.png")}
-                  width={80}
-                  height={80}
-                  alt="item1"
-                />
-              </ImageContainer>
-              <ItemName>Sony DSC-RX100M III</ItemName>
-              <ItemPrice>$849.99</ItemPrice>
-              <ItemQuantity>Quantity: 01</ItemQuantity>
-            </Li>
-          </Ul>
+          <Items>
+            {carts.map((cart) => {
+              return (
+                <Item key={cart.id}>
+                  <ImageContainer>
+                    <Image
+                      src={`${cart?.image}`}
+                      width={80}
+                      height={80}
+                      alt={cart.title}
+                    />
+                  </ImageContainer>
+                  <ItemName>{cart.title}</ItemName>
+                  <ItemPrice>{moneyFormat(cart.price)}</ItemPrice>
+                  <ItemQuantity>Quantity: 01</ItemQuantity>
+                </Item>
+              );
+            })}
+          </Items>
 
-          <Button>Checkout</Button>
+          <Button>
+            {" "}
+            <BsFillBagCheckFill size={16} className="icon-checkout" />
+            Checkout
+          </Button>
+          <DeleteCart>
+            {" "}
+            <BsTrashFill size={16} className="icon-delete" />
+            Apagar Carrinho
+          </DeleteCart>
         </ShoppingCart>
       </Container>
     </>

@@ -1,5 +1,7 @@
 import React, { createContext, useState, useCallback } from "react";
 
+import { sum } from "../helpers/functions";
+
 type CartType = {
   id: number;
   description: string;
@@ -10,18 +12,20 @@ type CartType = {
 
 type PropsCartContext = {
   counter: number;
+  totalPrice: number;
+  carts: CartType[];
   addCart: (data: CartType) => void;
   removeCart: () => void;
   removeItemCart: (item: number) => void;
-  carts: CartType[];
 };
 
 const DEFAULT_VALUE = {
   counter: 0,
+  totalPrice: 0,
+  carts: [],
   addCart: () => null,
   removeCart: () => null,
   removeItemCart: () => null,
-  carts: [],
 };
 
 const CartContext = createContext<PropsCartContext>(DEFAULT_VALUE);
@@ -29,6 +33,7 @@ const CartContext = createContext<PropsCartContext>(DEFAULT_VALUE);
 const CartContextProvider: React.FC = ({ children }) => {
   const [carts, setCarts] = useState<CartType[]>([]);
   const [counter, setCounter] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const addCart = useCallback(
     (data: CartType) => {
@@ -36,6 +41,7 @@ const CartContextProvider: React.FC = ({ children }) => {
       list.push(data);
       setCarts(list);
       setCounter(list.length);
+      setTotalPrice(sum(list));
     },
     [carts]
   );
@@ -43,6 +49,7 @@ const CartContextProvider: React.FC = ({ children }) => {
   const removeCart = useCallback(() => {
     setCarts(new Array());
     setCounter(0);
+    setTotalPrice(sum(0));
   }, [carts]);
 
   const removeItemCart = useCallback(
@@ -52,6 +59,7 @@ const CartContextProvider: React.FC = ({ children }) => {
       if (cartIndex >= 0) list.splice(cartIndex, 1);
       setCarts(list);
       setCounter(list.length);
+      setTotalPrice(sum(list));
     },
     [carts]
   );
@@ -60,10 +68,11 @@ const CartContextProvider: React.FC = ({ children }) => {
     <CartContext.Provider
       value={{
         counter,
+        totalPrice,
+        carts,
         addCart,
         removeCart,
         removeItemCart,
-        carts,
       }}
     >
       {children}
