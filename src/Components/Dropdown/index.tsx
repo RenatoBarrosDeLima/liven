@@ -83,14 +83,14 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
                   <DeleteItemCart>
                     <BsPlusCircle
                       onClick={() => addQuantityItemCart(cart.id)}
-                      size={25}
+                      size={23}
                       color="#000000"
                       className="icon-delete"
                     />
 
                     <CgRemove
                       onClick={() => removeQuantityItemCart(cart.id)}
-                      size={25}
+                      size={23}
                       color="#000000"
                       className="icon-delete"
                     />

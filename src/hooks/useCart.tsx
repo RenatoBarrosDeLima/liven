@@ -1,4 +1,5 @@
 import React, { createContext, useState, useCallback } from "react";
+import axios from "axios";
 
 import { sum } from "../helpers/functions";
 
@@ -45,6 +46,29 @@ const CartContextProvider: React.FC = ({ children }) => {
       const list = carts;
       list.push(data);
 
+      const body = {
+        userId: 1914,
+        date: new Date(),
+        products: [{ productId: data.id, quantity: data.quantity }],
+      };
+
+      axios
+        .post("/api/cart", { ...body })
+        .then(({ status, data }) => {
+          if (status === 200) {
+            window.alert("Carrinho adicionado com sucesso");
+          } else {
+            window.alert(
+              "Tivemos um problema ao salvar o carrinho, tente novamente"
+            );
+          }
+        })
+        .catch(() => {
+          window.alert(
+            "Tivemos um problema ao salvar o carrinho, tente novamente"
+          );
+        });
+
       setCarts(list);
       setCounter(list.length);
       setTotalPrice(sum(list));
@@ -56,7 +80,7 @@ const CartContextProvider: React.FC = ({ children }) => {
     setCarts(new Array());
     setCounter(0);
     setTotalPrice(0);
-  }, [carts]);
+  }, []);
 
   const removeItemCart = useCallback(
     (item: number) => {
@@ -64,6 +88,27 @@ const CartContextProvider: React.FC = ({ children }) => {
       const cartIndex = list.findIndex((x) => x.id === item);
 
       if (cartIndex >= 0) list.splice(cartIndex, 1);
+      console.log("entrou aqui");
+      axios
+        .delete("/api/cart", {
+          params: {
+            cartId: 10,
+          },
+        })
+        .then(({ status, data }) => {
+          if (status === 200) {
+            window.alert("Carrinho deletado com sucesso");
+          } else {
+            window.alert(
+              "Tivemos um problema ao deletar o carrinho, tente novamente"
+            );
+          }
+        })
+        .catch(() => {
+          window.alert(
+            "Tivemos um problema ao deletar o carrinho, tente novamente"
+          );
+        });
 
       setCarts(list);
       setCounter(list.length);
@@ -77,6 +122,33 @@ const CartContextProvider: React.FC = ({ children }) => {
       const list = carts;
       const cartIndex = list.findIndex((x) => x.id === item);
       list[cartIndex].quantity++;
+
+      const body = {
+        cartId: 10,
+        userId: 1914,
+        date: new Date(),
+        products: [
+          { productId: list[cartIndex].id, quantity: list[cartIndex].quantity },
+        ],
+      };
+
+      axios
+        .put("/api/cart", { ...body })
+        .then(({ status, data }) => {
+          if (status === 200) {
+            window.alert("Carrinho atualizado com sucesso");
+          } else {
+            window.alert(
+              "Tivemos um problema ao atualizar o carrinho, tente novamente"
+            );
+          }
+        })
+        .catch(() => {
+          window.alert(
+            "Tivemos um problema ao atualizar o carrinho, tente novamente"
+          );
+        });
+
       setCarts(list);
       setTotalPrice(sum(list));
     },
@@ -91,6 +163,32 @@ const CartContextProvider: React.FC = ({ children }) => {
       if (list[cartIndex].quantity === 0) {
         list.splice(cartIndex, 1);
       }
+      const body = {
+        cartId: 10,
+        userId: 1914,
+        date: new Date(),
+        products: [
+          { productId: list[cartIndex].id, quantity: list[cartIndex].quantity },
+        ],
+      };
+
+      axios
+        .put("/api/cart", { ...body })
+        .then(({ status, data }) => {
+          if (status === 200) {
+            window.alert("Carrinho atualizado com sucesso");
+          } else {
+            window.alert(
+              "Tivemos um problema ao atualizar o carrinho, tente novamente"
+            );
+          }
+        })
+        .catch(() => {
+          window.alert(
+            "Tivemos um problema ao atualizar o carrinho, tente novamente"
+          );
+        });
+
       setCarts(list);
       setTotalPrice(sum(list));
     },
