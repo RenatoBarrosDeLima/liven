@@ -17,6 +17,8 @@ import {
   ShoppingCart,
   ShoppingCartHeader,
   ShoppingCartTotal,
+  DeleteItemCart,
+  CartItem,
 } from "./styles";
 
 import UserContext from "../../hooks/useCart";
@@ -24,10 +26,22 @@ import { moneyFormat } from "../../helpers/functions";
 
 interface DropdownProps {
   active: boolean;
+  setIsDropdown: (active: boolean) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ active }) => {
-  const { carts, totalPrice } = useContext(UserContext);
+const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
+  const { carts, totalPrice, removeCart, removeItemCart } =
+    useContext(UserContext);
+
+  const handleCheckout = () => {
+    setIsDropdown(!active);
+  };
+
+  const handleDeleteCart = () => {
+    removeCart();
+    setIsDropdown(!active);
+  };
+
   return (
     <>
       <Container active={active}>
@@ -51,23 +65,33 @@ const Dropdown: React.FC<DropdownProps> = ({ active }) => {
                       alt={cart.title}
                     />
                   </ImageContainer>
-                  <ItemName>{cart.title}</ItemName>
-                  <ItemPrice>{moneyFormat(cart.price)}</ItemPrice>
-                  <ItemQuantity>Quantity: 01</ItemQuantity>
+                  <CartItem>
+                    <ItemName>{cart.title}</ItemName>
+                    <ItemPrice>{moneyFormat(cart.price)}</ItemPrice>
+                    <ItemQuantity>Quantity: 01</ItemQuantity>
+                  </CartItem>
+                  <DeleteItemCart>
+                    <BsTrashFill
+                      onClick={() => removeItemCart(cart.id)}
+                      size={16}
+                      color="#1a0b0c"
+                      className="icon-delete"
+                    />
+                  </DeleteItemCart>
                 </Item>
               );
             })}
           </Items>
 
-          <Button>
+          <Button onClick={() => handleCheckout()}>
             {" "}
             <BsFillBagCheckFill size={16} className="icon-checkout" />
             Checkout
           </Button>
-          <DeleteCart>
+          <DeleteCart onClick={() => handleDeleteCart()}>
             {" "}
             <BsTrashFill size={16} className="icon-delete" />
-            Apagar Carrinho
+            Apagar tudo
           </DeleteCart>
         </ShoppingCart>
       </Container>

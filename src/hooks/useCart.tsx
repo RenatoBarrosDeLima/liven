@@ -49,7 +49,7 @@ const CartContextProvider: React.FC = ({ children }) => {
   const removeCart = useCallback(() => {
     setCarts(new Array());
     setCounter(0);
-    setTotalPrice(sum(0));
+    setTotalPrice(0);
   }, [carts]);
 
   const removeItemCart = useCallback(

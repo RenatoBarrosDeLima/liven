@@ -22,7 +22,7 @@ const Icons = () => {
 
   return (
     <>
-      <Dropdown active={isDropdown} />
+      <Dropdown active={isDropdown} setIsDropdown={setIsDropdown} />
       <Container>
         <Favorite>
           <ButtonInfo>

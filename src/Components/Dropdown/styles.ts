@@ -36,7 +36,7 @@ export const Container = styled.div<ContainerProps>`
 
 export const ImageContainer = styled.div`
   float: left;
-  margin-right: 12px;
+  width: 35%;
 `;
 
 export const ItemName = styled.span`
@@ -57,6 +57,7 @@ export const ItemQuantity = styled.span`
 export const Item = styled.li`
   margin-bottom: 18px;
   border-bottom: 1px solid #c4c4c4;
+  display: flex;
 
   :after {
     content: "";
@@ -128,10 +129,22 @@ export const DeleteCart = styled.a`
   cursor: pointer;
 
   :hover {
-    background: #cc0213;
+    background: #e82a3a;
   }
 
   .icon-delete {
     margin-right: 10px;
   }
+`;
+
+export const DeleteItemCart = styled.div`
+  float: right;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;
+
+export const CartItem = styled.div`
+  width: 85%;
 `;
