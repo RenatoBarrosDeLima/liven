@@ -57,6 +57,7 @@ export const NavLink = styled.a`
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     padding-top: 15px;

@@ -161,10 +161,6 @@ const CartContextProvider: React.FC = ({ children }) => {
     (item: number) => {
       const list = carts;
       const cartIndex = list.findIndex((x) => x.id === item);
-      list[cartIndex].quantity--;
-      if (list[cartIndex].quantity === 0) {
-        list.splice(cartIndex, 1);
-      }
       const body = {
         cartId: 10,
         userId: 1914,
@@ -190,6 +186,10 @@ const CartContextProvider: React.FC = ({ children }) => {
             "Tivemos um problema ao atualizar o carrinho, tente novamente"
           );
         });
+      list[cartIndex].quantity--;
+      if (list[cartIndex].quantity === 0) {
+        list.splice(cartIndex, 1);
+      }
 
       setCarts(list);
       setTotalPrice(sum(list));

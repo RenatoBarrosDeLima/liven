@@ -52,7 +52,7 @@ const Navigation: React.FC<NavitaionProps> = ({ menus, setListProducts }) => {
             {menus?.map((menu: string, index: number) => {
               return (
                 <Nav key={index} active={active === index ? true : false}>
-                  <NavLink onClick={() => handleMenu(menu, index)} href="#">
+                  <NavLink onClick={() => handleMenu(menu, index)}>
                     {menu}
                   </NavLink>
                 </Nav>
