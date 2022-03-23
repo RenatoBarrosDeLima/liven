@@ -18,7 +18,10 @@ import "../../styles/globals.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider>
-      <DefaultSeo defaultTitle="Liven Ecommerce" />
+      <DefaultSeo
+        defaultTitle="Liven Ecommerce"
+        canonical="https://liven-ecommerce.herokuapp.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.2489cadd.png&w=256&q=75"
+      />
       <Header />
       <Component {...pageProps} />
       <Loading />
