@@ -1,5 +1,7 @@
 // Importação da biblioteca do next
 import type { AppProps } from "next/app";
+// Importação da biblioteca do next-seo
+import { DefaultSeo } from "next-seo";
 
 // Importação dos componentes criados
 import Header from "../layout/Header";
@@ -16,6 +18,7 @@ import "../../styles/globals.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider>
+      <DefaultSeo defaultTitle="Liven Ecommerce" />
       <Header />
       <Component {...pageProps} />
       <Loading />
