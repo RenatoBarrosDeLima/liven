@@ -1,4 +1,4 @@
-// Importação do axios, responsável por fazer as chamadas na API
+// Importação da bibliotecas do Axios
 import axios from "axios";
 
 // Cria uma instância no axios que será utilizado por toda a aplicação usando a URL da fakestoreapi
