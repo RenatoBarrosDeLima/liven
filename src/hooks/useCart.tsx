@@ -43,7 +43,7 @@ const DEFAULT_VALUE = {
 const CartContext = createContext<PropsCartContext>(DEFAULT_VALUE);
 
 const CartContextProvider: React.FC = ({ children }) => {
-  // Variável que exibe o Toast de notificação
+  // Variável que exibe o Toast de notificação Componente
   const { openToast } = useContext(ToastContext);
   // Variável armazena os items do carrinho para exibição no componente
   const [carts, setCarts] = useState<CartType[]>([]);
