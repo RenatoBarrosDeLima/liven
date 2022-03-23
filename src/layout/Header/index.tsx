@@ -30,14 +30,17 @@ const Header = () => {
           <HeaderContent>
             <Row>
               <Col3>
+                {/* Component contendo a logo ficticia */}
                 <Logo />
               </Col3>
 
               <Col6>
+                {/* Componente com o form de pesquisa e botão de pesquisa  */}
                 <Search />
               </Col6>
 
               <Col3>
+                {/* Compoente com os ícones de favoritos e componente de carrinho com as compras  */}
                 <Icons />
               </Col3>
             </Row>
