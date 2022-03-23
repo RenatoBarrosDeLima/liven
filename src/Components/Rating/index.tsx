@@ -7,7 +7,7 @@ import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { Container, Count, Reviews } from "./styles";
 
 // Importação das funções criadas
-import { fractional } from "../../helpers/functions";
+import { fractional } from "../../functions";
 
 interface RatingProps {
   rating: any;

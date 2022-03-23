@@ -1,4 +1,4 @@
-import { moneyFormat, fractional, sum } from "../helpers/functions";
+import { moneyFormat, fractional, sum } from "../functions";
 
 describe("Functions", () => {
   test("Testando função (moneyFormat) para formação de moeda para real", () => {

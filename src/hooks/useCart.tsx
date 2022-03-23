@@ -4,7 +4,7 @@ import React, { createContext, useState, useCallback, useContext } from "react";
 import axios from "axios";
 
 // Importação das funções criadas
-import { sum } from "../helpers/functions";
+import { sum } from "../functions";
 
 // Importação do hook de toast
 import ToastContext from "./useToast";

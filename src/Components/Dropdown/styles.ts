@@ -42,17 +42,19 @@ export const ImageContainer = styled.div`
 export const ItemName = styled.span`
   display: block;
   padding-top: 10px;
-  font-size: 16px;
+  font-size: 15px;
 `;
 
 export const ItemPrice = styled.span`
   color: #171011;
   margin-right: 8px;
   font-weight: bold;
+  font-size: 15px;
 `;
 
 export const ItemQuantity = styled.span`
   color: #3d3939;
+  font-size: 14px;
 `;
 
 export const ItemQuantityValue = styled.span`

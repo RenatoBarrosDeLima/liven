@@ -31,7 +31,7 @@ import {
 import CartContext from "../../hooks/useCart";
 
 // Importação das funções criadas
-import { moneyFormat } from "../../helpers/functions";
+import { moneyFormat } from "../../functions";
 
 // Props para exibir ou ocultar o componente do carrinho, dependendo da variável active
 interface DropdownProps {
@@ -94,14 +94,14 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
                   <DeleteItemCart>
                     <BsPlusCircle
                       onClick={() => addQuantityItemCart(cart.id)}
-                      size={23}
+                      size={20}
                       color="#000000"
                       className="icon-delete"
                     />
 
                     <CgRemove
                       onClick={() => removeQuantityItemCart(cart.id)}
-                      size={23}
+                      size={20}
                       color="#000000"
                       className="icon-delete"
                     />

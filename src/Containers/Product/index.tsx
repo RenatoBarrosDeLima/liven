@@ -15,7 +15,7 @@ import { Price, Title, Col4, Row, Container, ButtonAdd } from "./styles";
 import CartContext from "../../hooks/useCart";
 
 // Importação das funções criadas
-import { moneyFormat } from "../../helpers/functions";
+import { moneyFormat } from "../../functions";
 
 interface ProductProps {
   products: any;
