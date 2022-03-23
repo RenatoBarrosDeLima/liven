@@ -1,7 +1,10 @@
+// Importação das bibliotecas do react
 import React, { useState } from "react";
+// Importação das bibliotecas do react-icons
 import { BsFillTelephoneFill, BsFillGeoAltFill, BsHeart } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 
+// Importação dos meus componentes estilizados usando o styled components
 import {
   Col12,
   Col3,
@@ -17,19 +20,17 @@ import {
   Section,
 } from "./styles";
 
+// Importação dos dados mockados
 import { phone, address, email, author } from "../mockData";
 
 const Footer = () => {
+  // Variável que armazena o ano atual
   const [year] = useState(new Date().getFullYear());
   return (
     <>
-      {/* FOOTER  */}
       <Container>
-        {/* top footer  */}
         <Section bottom={false}>
-          {/* container  */}
           <Content>
-            {/* row  */}
             <Row>
               <Col3>
                 <ListFooter>
@@ -138,16 +139,11 @@ const Footer = () => {
                 </ListFooter>
               </Col3>
             </Row>
-            {/* /row  */}
           </Content>
-          {/* /container  */}
         </Section>
-        {/* /top footer  */}
 
-        {/* bottom footer */}
         <Section bottom={true}>
           <Content>
-            {/* row  */}
             <Row>
               <Col12>
                 <Copyright>
@@ -157,13 +153,9 @@ const Footer = () => {
                 </Copyright>
               </Col12>
             </Row>
-            {/* /row  */}
           </Content>
-          {/* /container */}
         </Section>
-        {/* /bottom footer  */}
       </Container>
-      {/* /FOOTER  */}
     </>
   );
 };

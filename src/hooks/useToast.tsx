@@ -1,3 +1,4 @@
+// Importação das bibliotecas do react
 import React, { createContext, useState, useCallback } from "react";
 
 type PropsToastContext = {
@@ -13,8 +14,10 @@ const DEFAULT_VALUE = {
 const ToastContext = createContext<PropsToastContext>(DEFAULT_VALUE);
 
 const ToastContextProvider: React.FC = ({ children }) => {
+  // Variável que armazena a mensagem exibida no toast notificação component
   const [msg, setMsg] = useState("");
 
+  // Função que exibe o Toast
   const openToast = useCallback((msg) => {
     setMsg(msg);
 
