@@ -6,7 +6,7 @@ import Image from "next/image";
 import { BsFillCartPlusFill, BsFillCartDashFill } from "react-icons/bs";
 
 // Importação dos componentes criados
-import Rating from "../../components/Rating";
+// import Rating from "../../components/Rating";
 
 // Importação dos meus componentes estilizados usando o styled components
 import { Price, Title, Col4, Row, Container, ButtonAdd } from "./styles";
@@ -52,7 +52,7 @@ const Product: React.FC<ProductProps> = ({ products }) => {
                     </a>
                   </ButtonAdd>
                   <Title>{product?.title}</Title>
-                  <Rating rating={product?.rating} />
+                  {/* <Rating rating={product?.rating} /> */}
                   <Price>{moneyFormat(product?.price)}</Price>
                 </Col4>
               ) : (
@@ -71,7 +71,7 @@ const Product: React.FC<ProductProps> = ({ products }) => {
                     </a>
                   </ButtonAdd>
                   <Title>{product?.title}</Title>
-                  <Rating rating={product?.rating} />
+                  {/* <Rating rating={product?.rating} /> */}
                   <Price>{moneyFormat(product?.price)}</Price>
                 </Col4>
               )}
