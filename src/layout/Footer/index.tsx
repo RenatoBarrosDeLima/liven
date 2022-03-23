@@ -37,7 +37,7 @@ const Footer = () => {
                   <FooterTitle>About Us</FooterTitle>
                   <Links>
                     <Link>
-                      <LinkButton href="#">
+                      <LinkButton>
                         <BsFillGeoAltFill
                           className="icon-footer"
                           size={12}
@@ -47,7 +47,7 @@ const Footer = () => {
                       </LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">
+                      <LinkButton>
                         <BsFillTelephoneFill
                           className="icon-footer"
                           size={12}
@@ -57,7 +57,7 @@ const Footer = () => {
                       </LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">
+                      <LinkButton>
                         <AiOutlineMail
                           className="icon-footer"
                           size={12}
@@ -75,19 +75,19 @@ const Footer = () => {
                   <FooterTitle>Categories</FooterTitle>
                   <Links>
                     <Link>
-                      <LinkButton href="#">Hot deals</LinkButton>
+                      <LinkButton>Hot deals</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Laptops</LinkButton>
+                      <LinkButton>Laptops</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Smartphones</LinkButton>
+                      <LinkButton>Smartphones</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Cameras</LinkButton>
+                      <LinkButton>Cameras</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Accessories</LinkButton>
+                      <LinkButton>Accessories</LinkButton>
                     </Link>
                   </Links>
                 </ListFooter>
@@ -98,19 +98,19 @@ const Footer = () => {
                   <FooterTitle>Information</FooterTitle>
                   <Links>
                     <Link>
-                      <LinkButton href="#">About Us</LinkButton>
+                      <LinkButton>About Us</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Contact Us</LinkButton>
+                      <LinkButton>Contact Us</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Privacy Policy</LinkButton>
+                      <LinkButton>Privacy Policy</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Orders and Returns</LinkButton>
+                      <LinkButton>Orders and Returns</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Terms & Conditions</LinkButton>
+                      <LinkButton>Terms & Conditions</LinkButton>
                     </Link>
                   </Links>
                 </ListFooter>
@@ -121,19 +121,19 @@ const Footer = () => {
                   <FooterTitle>Service</FooterTitle>
                   <Links>
                     <Link>
-                      <LinkButton href="#">My Account</LinkButton>
+                      <LinkButton>My Account</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">View Cart</LinkButton>
+                      <LinkButton>View Cart</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Wishlist</LinkButton>
+                      <LinkButton>Wishlist</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Track My Order</LinkButton>
+                      <LinkButton>Track My Order</LinkButton>
                     </Link>
                     <Link>
-                      <LinkButton href="#">Help</LinkButton>
+                      <LinkButton>Help</LinkButton>
                     </Link>
                   </Links>
                 </ListFooter>

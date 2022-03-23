@@ -32,29 +32,29 @@ const TopHeader: React.FC<TopHeaderProps> = ({ phone, address, email }) => {
         <Content>
           <LeftUL>
             <Li>
-              <ButtonHeader href="#">
+              <ButtonHeader>
                 <BsFillTelephoneFill size={12} color="#D10024" /> {phone}
               </ButtonHeader>
             </Li>
             <Li>
-              <ButtonHeader href="#">
+              <ButtonHeader>
                 <AiOutlineMail size={12} color="#D10024" /> {email}
               </ButtonHeader>
             </Li>
             <Li>
-              <ButtonHeader href="#">
+              <ButtonHeader>
                 <BsFillGeoAltFill size={12} color="#D10024" /> {address}
               </ButtonHeader>
             </Li>
           </LeftUL>
           <RightUL>
             <Li>
-              <ButtonHeader href="#">
+              <ButtonHeader>
                 <BsCurrencyDollar size={12} color="#D10024" /> R$
               </ButtonHeader>
             </Li>
             <Li>
-              <ButtonHeader href="#">
+              <ButtonHeader>
                 <BsPerson size={12} color="#D10024" /> Minha conta
               </ButtonHeader>
             </Li>
