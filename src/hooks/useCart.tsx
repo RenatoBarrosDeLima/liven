@@ -90,7 +90,6 @@ const CartContextProvider: React.FC = ({ children }) => {
       const cartIndex = list.findIndex((x) => x.id === item);
 
       if (cartIndex >= 0) list.splice(cartIndex, 1);
-      console.log("entrou aqui");
       axios
         .delete("/api/cart", {
           params: {
