@@ -4,6 +4,7 @@
 O projeto desenvolvido é um ecommerce, em que é possível ter acesso a uma lista de produtos, filtrar por categorias e adicionar/remover items no carrinho de compra e adicionar/remover quantidade de items no carrinho.
 Para exibir os produtos faço uso da API fakestoreapi que retorna uma lista de produtos, como também uma lista de categorias diponível, também nela é possível ter acesso as rotas do carrinho.
 O projeto é 100% responsivo, ou seja, se adequa à tela de qualquer dispositivo mobile..
+A versão final do projeto pode ser consultada através desse link: <https://liven-ecommerce.herokuapp.com/>
 
 ## Stack
 Neste projeto frontend foi utilizado as seguintes tecnologias:
@@ -64,6 +65,8 @@ npm run start ou yarn start
 ```
 > A aplicação irá funcionar na poarta 3000.
 > O usuário pode acessar a aplicação acessando: http://localhost:3000
+> Site em produção <https://liven-ecommerce.herokuapp.com/>
+
 
 
 ## Autor
