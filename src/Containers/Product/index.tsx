@@ -1,22 +1,33 @@
+// Importação das bibliotecas do react
 import React, { useContext } from "react";
+// Importação da biblioteca de imagens do Next
 import Image from "next/image";
+// Importação das bibliotecas do react-icons
 import { BsFillCartPlusFill, BsFillCartDashFill } from "react-icons/bs";
 
-import { moneyFormat } from "../../helpers/functions";
-
+// Importação dos componentes criados
 import Rating from "../../components/Rating";
+
+// Importação dos meus componentes estilizados usando o styled components
 import { Price, Title, Col4, Row, Container, ButtonAdd } from "./styles";
 
+// Importação do hook de carrinho
 import CartContext from "../../hooks/useCart";
+
+// Importação das funções criadas
+import { moneyFormat } from "../../helpers/functions";
 
 interface ProductProps {
   products: any;
 }
 
 const Product: React.FC<ProductProps> = ({ products }) => {
+  // Variável definida e comentada no hook de carrinho <src\hooks\useCart.tsx>
   const { addCart, removeItemCart, carts } = useContext(CartContext);
 
+  // Função que verifica se um produto já foi adicionado no carrinho
   const isCart = (item: number) => {
+    // Se o ID do produto já tiver sido adicionado no carrinho então retorna true, caso contrário retorna falso
     if (carts.findIndex((x) => x.id === item) >= 0) return true;
     return false;
   };

@@ -1,4 +1,4 @@
-// Importação das bibliotecas do react
+// Importação da biblioteca do react
 import React from "react";
 // Importação da biblioteca de imagens do Next
 import Image from "next/image";

@@ -1,10 +1,14 @@
-import api from "../../services/api";
+// Importação das bibliotecas do react
 import type { NextApiRequest, NextApiResponse } from "next";
+
+// Importação da instância do AXIO, chamada api
+import api from "../../services/api";
 
 type Data = {
   name: string;
 };
 
+// Essas é a rota verdadeiras da fakestoreapi, as chamadas são feitas no componente de navigation <src\containers\Navigation\index.tsx>
 const handleRequest = async (
   req: NextApiRequest,
   res: NextApiResponse<Data>

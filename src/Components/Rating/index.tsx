@@ -1,4 +1,4 @@
-// Importação das bibliotecas do react
+// Importação da biblioteca do react
 import React from "react";
 // Importação das bibliotecas do react-icons
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
