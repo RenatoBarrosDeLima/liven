@@ -232,6 +232,7 @@ const CartContextProvider: React.FC = ({ children }) => {
       // Se a quantidade for 0 então remove o item
       if (list[cartIndex].quantity === 0) {
         list.splice(cartIndex, 1);
+        setCounter(carts.length);
       }
 
       // Variável que armazena os items do carrinho para exibição no componente
