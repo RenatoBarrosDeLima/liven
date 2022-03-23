@@ -1,8 +1,12 @@
+// Importação das bibliotecas do react
 import React, { useContext } from "react";
+// Importação da biblioteca de imagens do Next
 import Image from "next/image";
+// Importação das bibliotecas do react-icons
 import { BsFillBagCheckFill, BsTrashFill, BsPlusCircle } from "react-icons/bs";
 import { CgRemove } from "react-icons/cg";
 
+// Importação dos meus componentes estilizados usando o styled components
 import {
   Button,
   Container,
@@ -23,15 +27,20 @@ import {
   ItemQuantityValue,
 } from "./styles";
 
+// Importação do hook de carrinho
 import CartContext from "../../hooks/useCart";
+
+// Importação das funções criadas
 import { moneyFormat } from "../../helpers/functions";
 
+// Props para exibir ou ocultar o componente do carrinho, dependendo da variável active
 interface DropdownProps {
   active: boolean;
   setIsDropdown: (active: boolean) => void;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
+  // Variáveis e funções definidas e comentadas no hook de carrinho <src\hooks\useCart.tsx>
   const {
     carts,
     totalPrice,
@@ -40,10 +49,12 @@ const Dropdown: React.FC<DropdownProps> = ({ active, setIsDropdown }) => {
     removeQuantityItemCart,
   } = useContext(CartContext);
 
+  // Função para exibir ou ocultar o componente do carrinho, active: false ou true
   const handleCheckout = () => {
     setIsDropdown(!active);
   };
 
+  // Função para remover todos os items do carrinho chamando a função removeCart() do hook de carrinho
   const handleDeleteCart = () => {
     removeCart();
     setIsDropdown(!active);

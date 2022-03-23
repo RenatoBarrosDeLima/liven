@@ -1,6 +1,9 @@
+// Importação das bibliotecas do react
 import React from "react";
+// Importação da biblioteca de imagens do Next
 import Image from "next/image";
 
+// Importação dos meus componentes estilizados usando o styled components
 import { Container, LogoButton } from "./styles";
 
 const Logo = () => {

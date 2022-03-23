@@ -1,7 +1,13 @@
+// Importação das bibliotecas do react
 import React, { useContext, useState } from "react";
+// Importação das bibliotecas do react-icons
 import { BsHeart, BsFillCartFill } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
 
+// Importação dos componentes criados
+import Dropdown from "../Dropdown";
+
+// Importação dos meus componentes estilizados usando o styled components
 import {
   ButtonInfo,
   Cart,
@@ -12,16 +18,18 @@ import {
   Span,
 } from "./styles";
 
+// Importação do hook de carrinho
 import CartContext from "../../hooks/useCart";
 
-import Dropdown from "../Dropdown";
-
 const Icons = () => {
+  // Variável definida e comentada no hook de carrinho <src\hooks\useCart.tsx>
   const { counter } = useContext(CartContext);
+  // Variável que exibe ou oculta o componente de carrinho com suas informações
   const [isDropdown, setIsDropdown] = useState(false);
 
   return (
     <>
+      {/* Se a variável isDropdown for true então exibe o componente do carrinho  */}
       <Dropdown active={isDropdown} setIsDropdown={setIsDropdown} />
       <Container>
         <Favorite>

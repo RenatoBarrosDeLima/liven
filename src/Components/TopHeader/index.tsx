@@ -1,4 +1,6 @@
+// Importação da bibliotecas do react
 import React from "react";
+// Importação das bibliotecas do react-icons
 import {
   BsFillTelephoneFill,
   BsFillGeoAltFill,
@@ -7,6 +9,7 @@ import {
 } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 
+// Importação dos meus componentes estilizados usando o styled components
 import {
   ButtonHeader,
   Container,
