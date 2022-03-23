@@ -4,8 +4,8 @@ import type { AppProps } from "next/app";
 // Importação dos componentes criados
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
-import Loading from "../components/Loading";
-import Toast from "../components/Toast";
+import Loading from "../Components/Loading";
+import Toast from "../Components/Toast";
 
 // Importação de todos os hooks criados direto na raiz da aplicação, sendo assim todo o sistema terar acesso a eles
 import Provider from "../hooks";

@@ -1,5 +1,5 @@
 // Importação do componente Home
-import Home from "../containers/Home";
+import Home from "../Containers/Home";
 // Importação da instância da API
 import api from "../services/api";
 

@@ -2,10 +2,10 @@
 import React from "react";
 
 // Importação dos componentes criados
-import Logo from "../../components/Logo";
-import Icons from "../../components/Icons";
-import Search from "../../components/Search";
-import TopHeader from "../../components/TopHeader";
+import Logo from "../../Components/Logo";
+import Icons from "../../Components/Icons";
+import Search from "../../Components/Search";
+import TopHeader from "../../Components/TopHeader";
 
 // Importação dos meus componentes estilizados usando o styled components
 import {

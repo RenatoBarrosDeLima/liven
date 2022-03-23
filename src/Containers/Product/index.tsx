@@ -6,7 +6,7 @@ import Image from "next/image";
 import { BsFillCartPlusFill, BsFillCartDashFill } from "react-icons/bs";
 
 // Importação dos componentes criados
-import Rating from "../../components/Rating";
+import Rating from "../../Components/Rating";
 
 // Importação dos meus componentes estilizados usando o styled components
 import { Price, Title, Col4, Row, Container, ButtonAdd } from "./styles";
