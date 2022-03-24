@@ -63,6 +63,12 @@ npm install ou yarn install
 npm run build ou yarn build
 npm run start ou yarn start
 ```
+
+Para realizar os testes:
+
+```sh
+npm run test ou yarn test
+```
 > A aplicação irá funcionar na poarta 3000.
 > O usuário pode acessar a aplicação acessando: http://localhost:3000
 > Site em produção <https://liven-ecommerce.herokuapp.com/>
